@@ -179,7 +179,8 @@ To update after deployment:
 
 ## Security Considerations
 
-- TMDB API key is currently in render.yaml (consider using Render secrets)
+- TMDB API key is configured as a secret in Render dashboard (not in repository)
 - Environment variables should be used for sensitive data
 - Regularly update dependencies for security patches
 - Monitor for any unauthorized access attempts
+- Never commit API keys or secrets to version control
