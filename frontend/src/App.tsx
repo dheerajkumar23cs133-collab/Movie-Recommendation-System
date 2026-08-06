@@ -133,7 +133,7 @@ function App() {
               </label>
               <input
                 type="number"
-                min="1"
+                min="0"
                 max="10"
                 value={numRecommendations}
                 onChange={(e) => setNumRecommendations(parseInt(e.target.value) || 5)}
