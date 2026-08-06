@@ -46,13 +46,33 @@ The `render.yaml` file includes all necessary environment variables:
 - `PYTHON_VERSION`: 3.12.0
 - `MODEL_PATH`: ./model
 - `CACHE_DIR`: ./cache
-- `TMDB_API_KEY`: 38159bed306f5edb71b1ba9ceccdf58f
+- `TMDB_API_KEY`: Set as secret in Render dashboard (see Security section below)
 
 **Frontend Service:**
 - `NODE_VERSION`: 18
 - `VITE_API_BASE_URL`: https://movie-recommendation-backend-zlo0.onrender.com
 
 **Note:** After deployment, update `VITE_API_BASE_URL` with your actual backend URL if different.
+
+### 4. Set TMDB API Key as Secret (Security)
+
+**IMPORTANT**: For security, the TMDB API key should be set as a secret in the Render dashboard, not hardcoded in the repository.
+
+**Steps to set the secret:**
+1. Go to your backend service on Render dashboard
+2. Navigate to the **Environment** tab
+3. Scroll to the `TMDB_API_KEY` variable
+4. Click on it and select **"Edit"**
+5. Set the value to your actual TMDB API key
+6. Make sure **"Sync"** is unchecked (this keeps it as a secret)
+7. Click **"Save Changes"**
+8. Trigger a manual deploy to apply the changes
+
+**Why this is important:**
+- API keys in git repositories are visible to anyone with repository access
+- Secrets in Render are encrypted and not visible in the repository
+- This prevents unauthorized use of your API quota
+- Protects your account from abuse
 
 ## Blueprint Configuration
 

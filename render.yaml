@@ -16,7 +16,7 @@ services:
       - key: CACHE_DIR
         value: ./cache
       - key: TMDB_API_KEY
-        value: 38159bed306f5edb71b1ba9ceccdf58f
+        sync: false
 
   # Frontend Service (React)
   - type: web
