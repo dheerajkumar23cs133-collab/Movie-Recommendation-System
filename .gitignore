@@ -87,6 +87,9 @@ tmp/
 temp/
 *.tmp
 
+# Setup documentation (local only)
+GITHUB_SETUP_STEPS.md
+
 # Keep directory structure
 !data/.gitkeep
 !model/.gitkeep
