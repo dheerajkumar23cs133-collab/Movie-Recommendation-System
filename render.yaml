@@ -24,7 +24,7 @@ services:
     runtime: node
     plan: free
     buildCommand: cd frontend && npm install && npm run build
-    startCommand: cd frontend && npm install -g serve && serve -s build -l $PORT
+    startCommand: cd frontend && npm install -g serve && serve -s dist -l $PORT
     envVars:
       - key: NODE_VERSION
         value: 18
