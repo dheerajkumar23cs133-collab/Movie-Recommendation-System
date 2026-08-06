@@ -2,6 +2,12 @@
 
 A modern, full-stack movie recommendation web application built with FastAPI (backend) and React (frontend). The system uses content-based filtering with natural language processing to recommend similar movies based on user preferences.
 
+## 🌐 Live Demo
+
+Check out the deployed application here: [https://movie-recommendation-frontend-cjqs.onrender.com/](https://movie-recommendation-frontend-cjqs.onrender.com/)
+
+> **Note:** The app is hosted on Render's free tier, so the backend may take a minute to spin up on the first request after inactivity.
+
 ## Features
 
 - **Content-Based Recommendations**: Uses TF-IDF vectorization and cosine similarity to recommend movies
@@ -138,6 +144,7 @@ npm run dev
 - Frontend: http://localhost:5173
 - Backend API: http://localhost:8000
 - API Documentation: http://localhost:8000/docs
+- Live Deployed App: https://movie-recommendation-frontend-cjqs.onrender.com/
 
 ## API Endpoints
 
@@ -197,6 +204,8 @@ The project includes a `render.yaml` blueprint for easy deployment to Render.com
 **Environment Variables:**
 - `TMDB_API_KEY`: Your TMDB API key
 - `VITE_API_BASE_URL`: Backend URL (after deployment)
+
+The current live deployment is available at: https://movie-recommendation-frontend-cjqs.onrender.com/
 
 For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md)
 
