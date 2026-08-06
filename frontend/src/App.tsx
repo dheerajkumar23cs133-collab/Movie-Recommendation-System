@@ -12,7 +12,7 @@ function App() {
   const [numRecommendations, setNumRecommendations] = useState(5);
   const [showHealth, setShowHealth] = useState(false);
   const [healthStatus, setHealthStatus] = useState<any>(null);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   // Fetch movies for the selector
   const { movies, loading: moviesLoading, error: moviesError } = useMovies(1, 100);
