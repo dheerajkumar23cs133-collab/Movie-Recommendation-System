@@ -1,7 +1,6 @@
 import axios from 'axios';
 import type {
   MovieBase,
-  MovieRecommendation,
   RecommendationRequest,
   RecommendationResponse,
   MovieListResponse,
