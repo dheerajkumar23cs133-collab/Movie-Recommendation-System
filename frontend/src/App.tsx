@@ -131,30 +131,16 @@ function App() {
               <label className={`block text-sm font-medium mb-2 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                 Number of Recommendations
               </label>
-              <input
-                type="tel"
-                inputMode="numeric"
-                pattern="[1-9]|10"
-                min="1"
-                max="10"
+              <select
                 value={numRecommendations}
-                onChange={(e) => {
-                  const value = parseInt(e.target.value);
-                  if (e.target.value === '') {
-                    setNumRecommendations(5);
-                  } else if (!isNaN(value) && value >= 1 && value <= 10) {
-                    setNumRecommendations(value);
-                  }
-                }}
-                onBlur={(e) => {
-                  const value = parseInt(e.target.value);
-                  if (isNaN(value) || value < 1 || value > 10) {
-                    setNumRecommendations(5);
-                  }
-                }}
+                onChange={(e) => setNumRecommendations(parseInt(e.target.value))}
                 disabled={recLoading}
                 className={`w-full p-3 sm:p-4 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:cursor-not-allowed transition-colors duration-300 text-lg sm:text-xl ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white disabled:bg-gray-600' : 'bg-white border-gray-300 text-gray-900 disabled:bg-gray-100'}`}
-              />
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                  <option key={num} value={num}>{num}</option>
+                ))}
+              </select>
             </div>
           </div>
 
