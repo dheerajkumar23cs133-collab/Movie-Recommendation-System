@@ -90,6 +90,9 @@ temp/
 # Setup documentation (local only)
 GITHUB_SETUP_STEPS.md
 
+# Local startup scripts
+start.bat
+
 # Keep directory structure
 !data/.gitkeep
 !model/.gitkeep
