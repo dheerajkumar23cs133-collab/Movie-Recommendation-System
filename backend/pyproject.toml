@@ -1,0 +1,33 @@
+[project]
+name = "movie-recommendation-backend"
+version = "1.0.0"
+description = "FastAPI backend for movie recommendation system"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi==0.104.1",
+    "uvicorn[standard]==0.24.0",
+    "pydantic==2.5.0",
+    "pydantic-settings==2.1.0",
+    "python-multipart==0.0.6",
+    "numpy==1.26.4",
+    "pandas==2.1.4",
+    "scikit-learn==1.3.2",
+    "requests==2.31.0",
+    "python-dotenv==1.0.0",
+    "httpx==0.25.2"
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+line_length = 100
