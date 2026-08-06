@@ -46,7 +46,7 @@ The `render.yaml` file includes all necessary environment variables:
 - `PYTHON_VERSION`: 3.12.0
 - `MODEL_PATH`: ./model
 - `CACHE_DIR`: ./cache
-- `TMDB_API_KEY`: 38159bed306f5edb71b1ba9ceccdf58f
+- `TMDB_API_KEY`: XXXXXXX--------------XXXXXXXXX
 
 **Frontend Service:**
 - `NODE_VERSION`: 18
