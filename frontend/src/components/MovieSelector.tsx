@@ -28,7 +28,7 @@ const MovieSelector: React.FC<MovieSelectorProps> = ({
         value={selectedMovie}
         onChange={(e) => onMovieChange(e.target.value)}
         disabled={disabled || loading}
-        className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:cursor-not-allowed transition-colors duration-300 ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white disabled:bg-gray-600' : 'bg-white border-gray-300 text-gray-900 disabled:bg-gray-100'}`}
+        className={`w-full p-3 sm:p-4 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:cursor-not-allowed transition-colors duration-300 text-base sm:text-lg ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white disabled:bg-gray-600' : 'bg-white border-gray-300 text-gray-900 disabled:bg-gray-100'}`}
       >
         <option value="">-- Choose a movie --</option>
         {movies.map((movie) => (

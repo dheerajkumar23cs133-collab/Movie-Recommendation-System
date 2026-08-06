@@ -52,22 +52,22 @@ function App() {
     <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'bg-gradient-to-br from-gray-900 to-gray-800' : 'bg-gradient-to-br from-blue-50 to-indigo-100'}`}>
       {/* Header */}
       <header className={`shadow-md transition-colors duration-300 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>🎬 Movie Recommendation</h1>
-              <p className={`mt-1 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>Discover similar movies using AI</p>
+        <div className="max-w-7xl mx-auto px-4 py-4 sm:py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-center sm:text-left">
+              <h1 className={`text-2xl sm:text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>🎬 Movie Recommendation</h1>
+              <p className={`mt-1 text-sm sm:text-base ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>Discover similar movies using AI</p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 w-full sm:w-auto justify-center">
               <button
                 onClick={() => setIsDarkMode(!isDarkMode)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isDarkMode ? 'bg-gray-700 hover:bg-gray-600 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-900'}`}
+                className={`px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isDarkMode ? 'bg-gray-700 hover:bg-gray-600 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-900'}`}
               >
                 {isDarkMode ? '☀️ Light' : '🌙 Dark'}
               </button>
               <button
                 onClick={() => setShowHealth(!showHealth)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isDarkMode ? 'bg-gray-700 hover:bg-gray-600 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-900'}`}
+                className={`px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isDarkMode ? 'bg-gray-700 hover:bg-gray-600 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-900'}`}
               >
                 {showHealth ? 'Hide Status' : 'Show Status'}
               </button>
@@ -81,7 +81,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 mt-4">
           <div className={`rounded-lg shadow p-4 transition-colors duration-300 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
             <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>API Status</h3>
-            <div className="grid grid-cols-3 gap-4 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
               <div>
                 <span className={isDarkMode ? 'text-gray-400' : 'text-gray-500'}>Status:</span>
                 <span className={`ml-2 ${healthStatus.status === 'healthy' ? 'text-green-600' : 'text-red-600'}`}>
@@ -104,9 +104,9 @@ function App() {
       )}
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        <div className={`rounded-xl shadow-lg p-6 mb-8 transition-colors duration-300 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <main className="max-w-7xl mx-auto px-4 py-6 sm:py-8">
+        <div className={`rounded-xl shadow-lg p-4 sm:p-6 mb-6 sm:mb-8 transition-colors duration-300 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {/* Movie Selection */}
             <div>
               {moviesLoading ? (
@@ -133,22 +133,22 @@ function App() {
               </label>
               <input
                 type="number"
-                min="0"
+                min="1"
                 max="10"
                 value={numRecommendations}
                 onChange={(e) => setNumRecommendations(parseInt(e.target.value) || 5)}
                 disabled={recLoading}
-                className={`w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:cursor-not-allowed transition-colors duration-300 ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white disabled:bg-gray-600' : 'bg-white border-gray-300 text-gray-900 disabled:bg-gray-100'}`}
+                className={`w-full p-3 sm:p-4 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:cursor-not-allowed transition-colors duration-300 text-lg sm:text-xl ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white disabled:bg-gray-600' : 'bg-white border-gray-300 text-gray-900 disabled:bg-gray-100'}`}
               />
             </div>
           </div>
 
           {/* Get Recommendations Button */}
-          <div className="mt-6">
+          <div className="mt-4 sm:mt-6">
             <button
               onClick={handleGetRecommendations}
               disabled={!selectedMovie || recLoading}
-              className="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg"
+              className="w-full md:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg text-base sm:text-lg"
             >
               {recLoading ? 'Finding Recommendations...' : 'Get Recommendations'}
             </button>

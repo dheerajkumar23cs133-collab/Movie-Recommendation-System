@@ -40,20 +40,20 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie, onClick, isDarkMode = fals
             }}
           />
         ) : null}
-        
+
         {/* Fallback design */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${gradientClass} flex flex-col items-center justify-center p-4 ${movie.poster_url ? 'hidden' : ''}`}>
-          <div className="text-white/90 text-5xl mb-3">🎬</div>
-          <p className="text-white font-semibold text-center text-sm leading-tight line-clamp-3">
+        <div className={`absolute inset-0 bg-gradient-to-br ${gradientClass} flex flex-col items-center justify-center p-2 sm:p-4 ${movie.poster_url ? 'hidden' : ''}`}>
+          <div className="text-white/90 text-3xl sm:text-5xl mb-2 sm:mb-3">🎬</div>
+          <p className="text-white font-semibold text-center text-xs sm:text-sm leading-tight line-clamp-3">
             {movie.title}
           </p>
         </div>
-        
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
-          <p className="text-white text-sm font-semibold truncate">{movie.title}</p>
+
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2 sm:p-3">
+          <p className="text-white text-xs sm:text-sm font-semibold truncate">{movie.title}</p>
         </div>
       </div>
-      <div className="p-3">
+      <div className="p-2 sm:p-3">
         <div className="flex items-center justify-between">
           <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
             Similarity: {(movie.similarity_score * 100).toFixed(1)}%

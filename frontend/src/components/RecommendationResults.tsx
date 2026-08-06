@@ -44,12 +44,12 @@ const RecommendationResults: React.FC<RecommendationResultsProps> = ({ data, loa
   return (
     <div className="recommendation-results">
       {/* Selected Movie */}
-      <div className="mb-8">
-        <h3 className={`text-xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Selected Movie</h3>
-        <div className={`rounded-lg shadow-md p-6 max-w-md transition-colors duration-300 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-          <div className="flex items-start space-x-4">
+      <div className="mb-6 sm:mb-8">
+        <h3 className={`text-lg sm:text-xl font-bold mb-3 sm:mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Selected Movie</h3>
+        <div className={`rounded-lg shadow-md p-4 sm:p-6 max-w-md transition-colors duration-300 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+          <div className="flex items-start space-x-3 sm:space-x-4">
             <div className="flex-shrink-0">
-              <div className="relative w-24 h-36 rounded overflow-hidden">
+              <div className="relative w-20 h-28 sm:w-24 sm:h-36 rounded overflow-hidden">
                 {data.selected_movie.poster_url ? (
                   <img
                     src={data.selected_movie.poster_url}
@@ -61,10 +61,10 @@ const RecommendationResults: React.FC<RecommendationResultsProps> = ({ data, loa
                     }}
                   />
                 ) : null}
-                
+
                 {/* Fallback design */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${gradientClass} flex flex-col items-center justify-center p-2 ${data.selected_movie.poster_url ? 'hidden' : ''}`}>
-                  <div className="text-white/90 text-3xl mb-2">🎬</div>
+                  <div className="text-white/90 text-2xl sm:text-3xl mb-2">🎬</div>
                   <p className="text-white font-semibold text-center text-xs leading-tight line-clamp-2">
                     {data.selected_movie.title}
                   </p>
@@ -72,8 +72,8 @@ const RecommendationResults: React.FC<RecommendationResultsProps> = ({ data, loa
               </div>
             </div>
             <div className="flex-1">
-              <h4 className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{data.selected_movie.title}</h4>
-              <p className={`text-sm mt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+              <h4 className={`text-base sm:text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{data.selected_movie.title}</h4>
+              <p className={`text-xs sm:text-sm mt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                 Total movies in database: {data.total_movies}
               </p>
             </div>
@@ -83,9 +83,9 @@ const RecommendationResults: React.FC<RecommendationResultsProps> = ({ data, loa
 
       {/* Recommended Movies */}
       <div>
-        <h3 className={`text-xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Recommended Movies</h3>
+        <h3 className={`text-lg sm:text-xl font-bold mb-3 sm:mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Recommended Movies</h3>
         {data.recommendations.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
             {data.recommendations.map((movie) => (
               <MovieCard key={movie.id} movie={movie} isDarkMode={isDarkMode} />
             ))}
